@@ -2,9 +2,9 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'dummy',
+    modulePrefix: 'classic',
     environment,
-    rootURL: '/',
+    rootURL: '/classic/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
