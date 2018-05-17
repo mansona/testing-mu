@@ -29,6 +29,8 @@ env:
     - EMBER_TRY_SCENARIO=ember-beta
     - EMBER_TRY_SCENARIO=ember-canary
     - EMBER_TRY_SCENARIO=ember-default
+    - EMBER_TRY_SCENARIO=ember-default APP_TO_TEST=classic
+    - EMBER_TRY_SCENARIO=ember-default APP_TO_TEST=mu
 
 matrix:
   fast_finish: true

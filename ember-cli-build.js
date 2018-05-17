@@ -5,7 +5,7 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 const MergeTrees = require('broccoli-merge-trees');
 const Funnel = require('broccoli-funnel');
 
-module.exports = function(defaults) {
+module.exports = function() {
   let sharedOptions = {
     /*
       Leave jQuery out of this addon's own test suite & dummy app by default,
