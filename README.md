@@ -1,50 +1,25 @@
 testing-mu
 ==============================================================================
 
-[Short description of the addon.]
+This isn't really an addon, this repo is supposed to demonstrate the implementation of multiple dummy apps in one addon's repo. The original requirement for this functionality is for the Module Unification implementation so that we can test addons with both MU and Classic apps.
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install testing-mu
+npm i
+npm start
 ```
 
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
+Note: this app is using the **EMBER_CLI_MODULE_UNIFICATION** experiment which you can see in the package.json `start` script.
 
 
-Contributing
-------------------------------------------------------------------------------
+### Running the dummy applications
 
-### Installation
+once you have run `npm start` you will be able to run the 3 dummy apps:
 
-* `git clone <repository-url>`
-* `cd testing-mu`
-* `npm install`
+- [Classic App](http://localhost:4200/classic)
+- [Module Unification App](http://localhost:4200/mu)
+- [Face app](http://localhost:4200/face) (because why not!)
 
-### Linting
-
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Running tests
-
-* `ember test` – Runs the test suite on the current Ember version
-* `ember test --server` – Runs the test suite in "watch mode"
-* `ember try:each` – Runs the test suite against multiple Ember versions
-
-### Running the dummy application
-
-* `ember serve`
-* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+This implementation was developed [Live on twitch](https://www.twitch.tv/videos/297629488)! If you want to keep track of future implementation work you can [follow me on Twitch](https://www.twitch.tv/real_ate) or I will probably tweet about it so follow me there too [@real_ate](https://twitter.com/real_ate)!
