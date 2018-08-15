@@ -28,9 +28,8 @@ module.exports = function() {
     name: 'mu',
     configPath: './dummy/mu/config/environment',
     trees: {
-      app: 'dummy/mu/src',
+      src: 'dummy/mu/src',
       public: 'dummy/mu/public',
-      src: null,
       styles: 'dummy/mu/src/ui/styles',
       templates: 'dummy/mu/src/templates',
       tests: new Funnel('tests', {
@@ -38,8 +37,9 @@ module.exports = function() {
       }),
       vendor: null,
     },
-
   }));
+
+
   let classicApp = new EmberAddon({ project: Project.closestSync(process.cwd()) }, Object.assign({}, sharedOptions, {
     name: 'classic',
     configPath: './dummy/classic/config/environment',

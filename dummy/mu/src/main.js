@@ -11,4 +11,9 @@ const App = Application.extend({
 
 loadInitializers(App, config.modulePrefix + "/src/init");
 
+/*
+ * This line is added to support initializers in the `app/` directory
+ */
+loadInitializers(App, config.modulePrefix);
+
 export default App;
