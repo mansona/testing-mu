@@ -26,13 +26,13 @@ module.exports = function() {
 
   let muApp = new EmberAddon({ project: Project.closestSync(process.cwd()) }, Object.assign({}, sharedOptions, {
     name: 'mu',
-    configPath: './tests/mu/config/environment',
+    configPath: './dummy/mu/config/environment',
     trees: {
-      app: 'tests/mu/app',
-      public: 'tests/mu/public',
+      app: 'dummy/mu/src',
+      public: 'dummy/mu/public',
       src: null,
-      styles: 'tests/mu/app/styles',
-      templates: 'tests/mu/app/templates',
+      styles: 'dummy/mu/src/ui/styles',
+      templates: 'dummy/mu/src/templates',
       tests: new Funnel('tests', {
         exclude: [/^mu/],
       }),
@@ -42,13 +42,13 @@ module.exports = function() {
   }));
   let classicApp = new EmberAddon({ project: Project.closestSync(process.cwd()) }, Object.assign({}, sharedOptions, {
     name: 'classic',
-    configPath: './tests/classic/config/environment',
+    configPath: './dummy/classic/config/environment',
     trees: {
-      app: 'tests/classic/app',
-      public: 'tests/classic/public',
+      app: 'dummy/classic/app',
+      public: 'dummy/classic/public',
       src: null,
-      styles: 'tests/classic/app/styles',
-      templates: 'tests/classic/app/templates',
+      styles: 'dummy/classic/app/styles',
+      templates: 'dummy/classic/app/templates',
       tests: new Funnel('tests', {
         exclude: [/^classic/],
       }),
