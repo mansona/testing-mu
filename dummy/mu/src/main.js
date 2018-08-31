@@ -5,6 +5,7 @@ import config from "../config/environment";
 
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
+  testModulePrefix: config.testModulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver
 });
