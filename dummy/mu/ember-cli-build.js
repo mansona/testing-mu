@@ -3,6 +3,7 @@
 const Project = require('ember-cli/lib/models/project');
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 const Funnel = require('broccoli-funnel');
+const mergeTrees = require('broccoli-merge-trees');
 
 module.exports = function() {
   let sharedOptions = {
@@ -31,9 +32,7 @@ module.exports = function() {
       public: 'dummy/mu/public',
       styles: 'dummy/mu/src/ui/styles',
       templates: 'dummy/mu/src/templates',
-      tests: new Funnel('tests', {
-        exclude: [/^mu/],
-      }),
+      tests: mergeTrees(['tests', 'dummy/mu/tests'], { overwrite: true }),
       vendor: null,
     },
   }));

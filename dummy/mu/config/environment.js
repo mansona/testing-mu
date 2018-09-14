@@ -3,7 +3,6 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'mu',
-    testModulePrefix: 'mu/src',
     environment,
     rootURL: '/mu/',
     locationType: 'auto',
