@@ -1,8 +1,9 @@
 'use strict';
 
 const Project = require('ember-cli/lib/models/project');
-const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-const Funnel = require('broccoli-funnel');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const mergeTrees = require('broccoli-merge-trees');
+const path = require('path');
 
 module.exports = function() {
   let sharedOptions = {
@@ -23,18 +24,11 @@ module.exports = function() {
     // Add options here
   };
 
-  let classicApp = new EmberAddon({ project: Project.closestSync(process.cwd()) }, Object.assign({}, sharedOptions, {
+  let classicApp = new EmberApp({ project: Project.closestSync(__dirname) }, Object.assign({}, sharedOptions, {
     name: 'classic',
-    configPath: './dummy/classic/config/environment',
     trees: {
-      app: 'dummy/classic/app',
-      public: 'dummy/classic/public',
       src: null,
-      styles: 'dummy/classic/app/styles',
-      templates: 'dummy/classic/app/templates',
-      tests: new Funnel('tests', {
-        exclude: [/^classic/],
-      }),
+      tests: mergeTrees([path.resolve(__dirname, '../../tests'), `${__dirname}/tests`], { overwrite: true }),
       vendor: null,
     },
 

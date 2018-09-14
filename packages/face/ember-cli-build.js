@@ -2,7 +2,6 @@
 
 const Project = require('ember-cli/lib/models/project');
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
 
 module.exports = function() {
@@ -24,19 +23,25 @@ module.exports = function() {
     // Add options here
   };
 
-  let muApp = new EmberAddon({ project: Project.closestSync(process.cwd()) }, Object.assign({}, sharedOptions, {
-    name: 'mu',
-    configPath: './dummy/mu/config/environment',
+  let project = Project.closestSync(__dirname);
+
+  // TODO fix me
+  project._targets = require('./config/targets');
+
+  let classicApp = new EmberAddon({ project }, Object.assign({}, sharedOptions, {
+    name: 'face',
+    configPath: './packages/face/config/environment',
     trees: {
-      src: 'dummy/mu/src',
-      public: 'dummy/mu/public',
-      styles: 'dummy/mu/src/ui/styles',
-      templates: 'dummy/mu/src/templates',
-      tests: mergeTrees(['tests', 'dummy/mu/tests'], { overwrite: true }),
+      app: 'packages/face/app',
+      public: 'packages/face/public',
+      src: null,
+      styles: 'packages/face/app/styles',
+      templates: 'packages/face/app/templates',
+      tests: mergeTrees(['tests', 'packages/face/tests'], { overwrite: true }),
       vendor: null,
     },
-  }));
 
+  }));
   // let dummyApp = new EmberAddon({ project: Project.closestSync(process.cwd()) }, sharedOptions);
 
   /*
@@ -46,5 +51,7 @@ module.exports = function() {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-   return muApp.toTree();
+
+
+   return classicApp.toTree();
 };

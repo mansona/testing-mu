@@ -1,0 +1,23 @@
+{
+  "name": "classic",
+  "devDependencies": {
+    "ember-cli": "*",
+    "ember-cli-app-version": "*",
+    "ember-cli-babel": "*",
+    "ember-cli-dependency-checker": "*",
+    "ember-cli-htmlbars": "*",
+    "ember-cli-htmlbars-inline-precompile": "*",
+    "ember-cli-inject-live-reload": "*",
+    "ember-cli-qunit": "*",
+    "ember-cli-sri": "*",
+    "ember-export-application-global": "*",
+    "ember-font-awesome": "*",
+    "ember-load-initializers": "*",
+    "ember-maybe-import-regenerator": "*",
+    "ember-resolver": "*",
+    "ember-source": "*",
+    "ember-truth-helpers": "*",
+    "loader.js": "*",
+    "qunit-dom": "*"
+  }
+}
